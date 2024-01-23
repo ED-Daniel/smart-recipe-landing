@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  smart-recipe-landing:
+    image: sxhornet/smart-recipe-landing
+    restart: always
+    # env_file: 
+    #   - .env
+    ports:
+      - '80:80'
+      - '443:443'

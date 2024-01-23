@@ -1,0 +1,449 @@
+<template>
+  <div class="main-container">
+    <div class="header-container">
+      <div class="header">
+        <div class="nav-button" @click="goTo('desc')">Описание</div>
+        <div class="nav-button" @click="goTo('team')">Команда</div>
+        <div class="nav-button" @click="goTo('advantages')">Преимущества</div>
+        <div class="nav-button" @click="goTo('roadmap')">Роадмап</div>
+        <div class="nav-button" @click="goTo('team')">Контакты</div>
+      </div>
+    </div>
+    <div class="logo-container" id="desc">
+      <div class="logo-smart">SMART</div>
+      <div class="logo-recipe">RECIPE</div>
+      <div class="logo-description">
+        Приложение “Smart Recipe” применяет в себе самые новые технологиии
+        свежие идеи для того, чтобы сделать процесс приготовления удобными
+        экономичным для вас.
+      </div>
+      <div class="logo-buttons-container">
+        <div class="logo-button" @click="goTo('team')">Команда</div>
+        <div class="logo-button" @click="goTo('roadmap')">Роадмап</div>
+      </div>
+    </div>
+
+    <div class="team-container" id="team">
+      <div class="team-header">Команда</div>
+      <div class="row">
+        <CardComponent
+          photo="/images/artem.png"
+          name="Мотякин Артем"
+          position="Руководитель"
+          description="Студент НИУ ВШЭ КБ 3 курс"
+          work="Работа: Huawei AI Laboratory, отдел AI Optimization and Acceleration."
+          stack="C/C++, Python, SQL"
+          info="Увлечения: Project Management, участие в хакатонах в роли backend & ml разработчика"
+        />
+      </div>
+      <div class="row">
+        <CardComponent
+          photo="/images/maxim.png"
+          name="Копырин Максим"
+          position="Teamlead front-end /designer"
+          description="Студент НИУ ВШЭ КБ 3 курс"
+          work="Работа: Ростелеком ЦОД отдел “Мониторинг защищенности”"
+          stack="Python, SQL, TS, React"
+          info="Увлечения: CTF, OSINT-разведка, front-end, design"
+        />
+        <CardComponent
+          photo="/images/mathew.png"
+          name="Семенищев Матвей"
+          position="Teamlead back-end"
+          description="Студент НИУ ВШЭ ИБ 3 курс"
+          work="-"
+          stack="Postgres, Django, Selenium, REST API"
+          info="Увлечения: Разработка сайтов, парсинг данных, шахматы"
+        />
+        <CardComponent
+          photo="/images/daniel.png"
+          name="Емельяненко Даниил"
+          position="Devops/Системный архитектор"
+          description="Студент НИУ ВШЭ КБ 3 курс"
+          work="Работа: FullStack разработчикв компании АО «Нейросети»"
+          stack="JS (VueJS, NestJS, AdonisJS), Python (Django)"
+          info="Увлечения: рисование, игра на гитаре, хакатоны"
+        />
+        <CardComponent
+          photo="/images/artem.png"
+          name="Зотьев Егор"
+          position="Продекутовый аналитик"
+          work="Работа: -"
+          description="-"
+          stack="-"
+          info="Увлечения: -"
+        />
+      </div>
+      <div class="row">
+        <CardComponent
+          photo="/images/hz.png"
+          name="Федоров Михаил"
+          position="Front-end/designer"
+          description="НИУ ВШЭ ИБ 3 курсУчусь, постепенно развиваюсьв своей сфере"
+          work="Люблю писать интересные небольшие программки, не только как домашки"
+          stack="Python, JS"
+          info="Увлечения: мода/дизайн, программирование"
+        />
+        <CardComponent
+          photo="/images/sergey.png"
+          name="Гетун Сергей"
+          position="Back-end разработчик"
+          description="Студент НИУ ВШЭ КБ 3 курс"
+          work="-"
+          stack="Python, Django"
+          info="Увлечения: написание back-end части для различных проектов, питон разработчик"
+        />
+        <CardComponent
+          photo="/images/sendik.png"
+          name="Сендик Михаил"
+          position="ML/СV разработчик"
+          description="Студент МИСИС БИСТ-21-1 3 курс"
+          work="Работа: smart contract developer"
+          stack="ML engineer, CV, NLP"
+          info="Увлечения: написание CV проектов в сфере игр и траффика"
+        />
+        <CardComponent
+          photo="/images/alexey.png"
+          name="Комиссаренко Алексей"
+          position="ML/СV разработчик"
+          description="Студент МИСИС БИСТ-21-1 3 курс"
+          work="Работа: ДИТ"
+          stack="Python, PyTorch, Classic ML, DL, CV, NLP"
+          info="Увлечения: -"
+        />
+      </div>
+    </div>
+
+    <div class="special-thanks-container" id="thanks">
+      <div class="thanks">Отдельная благодарность</div>
+      <div class="row">
+        <CardComponent
+          photo="/images/bober.png"
+          name="Бобер Станислав Алексеевич"
+          description="Руководитель направления"
+          work="Работа: преподаватель НИУ ВШЭ"
+          stack="Python"
+          info="Увлечения: -"
+        />
+      </div>
+    </div>
+
+    <div class="advantages-container" id="advantages">
+      <div class="advantages-wrapper">
+        <div class="advantages-header">Преимущества</div>
+        <div class="advantages-desc">
+          <ul>
+            <li>
+              Алгоритмы машинного обучения распознают на фотографии различные
+              продукты и подбирают рецепты, учитывая наличие ингредиентов и ваши
+              вкусовые предпочтения.
+            </li>
+            <li>
+              Не нужно выходить из дома: недостающие продукты можно в один клик
+              заказать в магазинах партнёров.
+            </li>
+            <li>
+              Уникальная система интерактивных рецептов предлагает различные
+              способы ускорения процесса приготовления.
+            </li>
+            <li>
+              Вы можете добавить собственные рецепты и поделиться им с другими
+              или оценить существующие.
+            </li>
+            <li>
+              Подробная система фильтрации и сортировки позволит с легкостью
+              подобрать вам нужный рецепт.
+            </li>
+            <li>
+              Вы сможете настроить подбор рецептов под себя также благодаря
+              блэклисту ингредиентов, сохранить рецепт в избранном.
+            </li>
+            <li>
+              Вы сразу с лёгкостью сможете использовать весь функционал нашего
+              приложения благодаря понятному интерфейсу с подробными гайдами на
+              каждой странице.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="roadmap-container" id="roadmap">
+      <div class="roadmap-wrapper">
+        <div class="roadmap-header">Роадмап</div>
+        <div class="roadmap-guide">
+          <div class="dot" />
+          <div class="guide">- Сейчас мы здесь</div>
+        </div>
+        <div class="roadmap-img">
+          <img
+            src="/images/roadmap.png"
+            alt="roadmap"
+            style="max-width: 100%; height: auto"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import CardComponent from "./components/CardComponent.vue";
+
+function goTo(id: string) {
+  location.hash = '#' + id;
+}
+</script>
+
+<style scoped>
+.main-container {
+  background: #0b0b0b;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+/* Rectangle 147 */
+.header-container {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header {
+  height: 25px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.header .nav-button {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  /* identical to box height */
+
+  color: #ffffff;
+
+  cursor: pointer;
+}
+
+.logo-smart {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 230px;
+  font-style: normal;
+  font-weight: 800;
+
+  height: 190px;
+
+  text-align: center;
+}
+
+.logo-recipe {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 230px;
+  font-style: normal;
+  font-weight: 300;
+
+  height: 190px;
+  margin-bottom: 50px;
+
+  text-align: center;
+}
+
+.logo-description {
+  width: 100%;
+  height: 82px;
+  flex-shrink: 0;
+
+  color: #c2c2c2;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 30px;
+
+  text-align: center;
+}
+
+.logo-buttons-container {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.logo-buttons-container .logo-button {
+  width: 246px;
+  height: 58px;
+  flex-shrink: 0;
+
+  border-radius: 38px;
+  background: #fff;
+
+  align-items: center;
+  text-align: center;
+  line-height: 58px;
+
+  color: #000;
+  font-family: Montserrat;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.team-container {
+  margin-top: 200px;
+  width: 100%;
+}
+
+.team-container .team-header {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin: 25px 0px 25px 0px;
+}
+
+.special-thanks-container {
+  width: 100%;
+  margin-top: 150px;
+}
+
+.special-thanks-container .thanks {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.advantages-container {
+  width: 100%;
+  margin-top: 150px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.advantages-container .advantages-header {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.advantages-container .advantages-desc {
+  width: 100%;
+
+  overflow-wrap: normal;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.advantages-container .advantages-wrapper {
+  width: 100%;
+  max-width: 1200px;
+}
+
+ul li {
+  margin-bottom: 30px;
+}
+
+.roadmap-container {
+  width: 100%;
+  margin-top: 150px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.roadmap-container .roadmap-wrapper {
+  width: 1200px;
+}
+
+.roadmap-container .roadmap-header {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.roadmap-container .roadmap-guide {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.roadmap-container .roadmap-guide .dot {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 100%;
+  background: #f73131;
+}
+
+.roadmap-container .roadmap-guide .guide {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.roadmap-container .roadmap-img {
+  width: 100%;
+  flex-shrink: 0;
+  margin-bottom: 100px;
+}
+
+.roadmap-container .roadmap-img img {
+  object-fit: cover;
+}
+</style>
