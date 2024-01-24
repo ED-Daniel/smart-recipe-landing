@@ -23,6 +23,21 @@
       </div>
     </div>
 
+    <div class="promo-container" id="promo">
+      <div class="promo-wrapper">
+        <div class="promo-header">Промо-ролик</div>
+        <div class="promo-video">
+          <video
+            src="http://localhost/media/done.mp4"
+            alt="Promo Video"
+            width="1200px"
+            height="675px"
+            controls="true"
+          />
+        </div>
+      </div>
+    </div>
+
     <div class="team-container" id="team">
       <div class="team-header">Команда</div>
       <div class="row">
@@ -445,5 +460,46 @@ ul li {
 
 .roadmap-container .roadmap-img img {
   object-fit: cover;
+}
+
+.promo-container {
+  width: 100%;
+  margin-top: 150px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.promo-container .promo-wrapper {
+  width: 1200px;
+  height: 675px;
+}
+
+.promo-container .promo-header {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.promo-container .promo-video {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  margin-bottom: 100px;
+}
+
+.promo-container .promo-video video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 </style>
