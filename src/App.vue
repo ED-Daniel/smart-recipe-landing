@@ -80,13 +80,13 @@
           info="Увлечения: рисование, игра на гитаре, хакатоны"
         />
         <CardComponent
-          photo="/images/artem.png"
+          photo="/images/egor.png"
           name="Зотьев Егор"
-          position="Продекутовый аналитик"
+          position="Продуктовый аналитик"
           work="Работа: -"
-          description="-"
-          stack="-"
-          info="Увлечения: -"
+          description="Имеет свою студию по интеграции новых технологий и модернизации бизнес-процессов"
+          stack="С/C++, Python"
+          info="Увлечения: Продукт-аналитика, бизнес планирование"
         />
       </div>
       <div class="row">
