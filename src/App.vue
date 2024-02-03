@@ -75,7 +75,7 @@
           name="Емельяненко Даниил"
           position="Devops/Системный архитектор"
           description="Студент НИУ ВШЭ КБ 3 курс"
-          work="Работа: FullStack разработчикв компании АО «Нейросети»"
+          work="Работа: FullStack разработчик в компании АО «Нейросети»"
           stack="JS (VueJS, NestJS, AdonisJS), Python (Django)"
           info="Увлечения: рисование, игра на гитаре, хакатоны"
         />
@@ -134,11 +134,12 @@
       <div class="row">
         <CardComponent
           photo="/images/bober.png"
-          name="Бобер Станислав Алексеевич"
-          description="Руководитель направления"
-          work="Работа: преподаватель НИУ ВШЭ"
-          stack="Python"
-          info="Увлечения: -"
+          name="Бобер Станислав"
+          description="Старший преподаватель НИУ ВШЭ"
+          work="Работа: Главный разработчик ПО в компании СтатСофт"
+          position="Руководитель направления"
+          stack="научный стек Python, PyQt, FastAPI"
+          info="Увлечения: программирование, математическое моделирование"
         />
       </div>
     </div>
@@ -199,14 +200,65 @@
         </div>
       </div>
     </div>
+
+    <div class="contacts-container" id="contacts">
+      <div class="contacts-wrapper">
+        <div class="contacts-text">
+          <div class="contacts-header">У вас остались вопросы?</div>
+          <div class="contacts-email">Почта: smartreceipts@yandex.ru</div>
+          <div class="contacts-socials">
+            Наши соцсети:
+            <img src="/images/tg.png" width="50" height="50" class="tg" />
+            <img src="/images/vk.png" width="50" height="50" class="vk" />
+            <img
+              src="/images/inst.png"
+              width="50"
+              height="50"
+              class="instagram"
+            />
+          </div>
+        </div>
+        <div class="contacts-form">
+          <div class="contacts-form-wrapper">
+            <form>
+              <label for="fname">Имя</label>
+              <input
+                v-model="inputName"
+                type="text"
+                id="fname"
+                name="firstname"
+                placeholder="Ваше имя"
+              />
+
+              <label for="lname">Номер телефона</label>
+              <input
+                v-model="phone"
+                type="text"
+                id="lname"
+                name="lastname"
+                placeholder="Ваш номер телефона"
+              />
+
+              <input type="submit" value="Submit" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="delimeter" />
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue";
 import CardComponent from "./components/CardComponent.vue";
 
+const inputName = ref<String>('');
+const phone = ref<String>('');
+
 function goTo(id: string) {
-  location.hash = '#' + id;
+  location.hash = "#" + id;
 }
 </script>
 
@@ -501,5 +553,123 @@ ul li {
   position: absolute;
   width: 100%;
   height: 100%;
+}
+
+.contacts-container {
+  width: 100%;
+  margin-top: 50px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.contacts-container .contacts-wrapper {
+  width: 1000px;
+  height: 500px;
+
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.contacts-text {
+  width: 100%;
+
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contacts-text .contacts-header {
+  width: 100%;
+
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.contacts-text .contacts-email {
+  width: 100%;
+
+  overflow-wrap: normal;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.contacts-text .contacts-socials {
+  width: 100%;
+  height: 50px;
+
+  overflow-wrap: normal;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 50px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.contacts-form {
+  width: 100%;
+  padding: 30px;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  font-family: Montserrat;
+  color: white;
+}
+
+.delimeter {
+  height: 100px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  margin-bottom: 30px;
+  display: inline-block;
+  border: 3px solid #fff;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: white;
+  background-color: black;
+
+  font-family: Montserrat;
+}
+
+input[type="submit"] {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 14px 20px;
+  margin: 20px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 3px;
+  border-color: white;
+
+  font-family: Montserrat;
+}
+
+input[type="submit"]:hover {
+  background-color: white;
+  color: black;
 }
 </style>
