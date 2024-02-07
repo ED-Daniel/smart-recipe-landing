@@ -28,7 +28,7 @@
         <div class="promo-header">Промо-ролик</div>
         <div class="promo-video">
           <video
-            src="https://smartreceipts.ru/media/done.mp4"
+            src="https://smart-recipe.ru/media/done.mp4"
             alt="Promo Video"
             width="1200px"
             height="675px"
