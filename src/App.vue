@@ -895,5 +895,9 @@ input[type="submit"]:hover {
   .special-thanks-container .thanks {
     font-size: 40px;
   }
+
+  .header {
+    gap: 20px;
+  }
 }
 </style>
