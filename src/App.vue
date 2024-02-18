@@ -22,7 +22,7 @@
         экономичным для вас.
       </div>
       <div class="logo-description" v-else>Новый взгляд на рецепты</div>
-      <div class="logo-buttons-container">
+      <div class="logo-buttons-container" v-if="!cpIsVertcial">
         <div class="logo-button" @click="goTo('team')">Команда</div>
         <div class="logo-button" @click="goTo('roadmap')">Роадмап</div>
       </div>
@@ -158,6 +158,8 @@
           stack="Python, SQL, TS, React"
           info="Увлечения: CTF, OSINT-разведка, front-end, design"
         />
+      </div>
+      <div class="row">
         <CardComponent
           photo="/images/mathew.png"
           name="Семенищев Матвей"
@@ -178,6 +180,8 @@
           stack="JS (VueJS, NestJS, AdonisJS), Python (Django)"
           info="Увлечения: рисование, игра на гитаре, хакатоны"
         />
+      </div>
+      <div class="row">
         <CardComponent
           photo="/images/egor.png"
           name="Зотьев Егор"
@@ -198,6 +202,8 @@
           stack="Python, JS"
           info="Увлечения: мода/дизайн, программирование"
         />
+      </div>
+      <div class="row">
         <CardComponent
           photo="/images/sergey.png"
           name="Гетун Сергей"
@@ -218,6 +224,8 @@
           stack="ML engineer, CV, NLP"
           info="Увлечения: написание CV проектов в сфере игр и траффика"
         />
+      </div>
+      <div class="row">
         <CardComponent
           photo="/images/alexey.png"
           name="Комиссаренко Алексей"
@@ -882,6 +890,10 @@ input[type="submit"]:hover {
   .contacts-text .contacts-socials {
     justify-content: center;
     gap: 10px;
+  }
+
+  .special-thanks-container .thanks {
+    font-size: 40px;
   }
 }
 </style>
