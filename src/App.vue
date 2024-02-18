@@ -2,21 +2,26 @@
   <div class="main-container">
     <div class="header-container">
       <div class="header">
-        <div class="nav-button" @click="goTo('desc')">Описание</div>
+        <div class="nav-button" @click="goTo('desc')" v-if="!cpIsVertcial">
+          Описание
+        </div>
         <div class="nav-button" @click="goTo('team')">Команда</div>
         <div class="nav-button" @click="goTo('advantages')">Преимущества</div>
         <div class="nav-button" @click="goTo('roadmap')">Роадмап</div>
-        <div class="nav-button" @click="goTo('team')">Контакты</div>
+        <div class="nav-button" @click="goTo('team')" v-if="!cpIsVertcial">
+          Контакты
+        </div>
       </div>
     </div>
     <div class="logo-container" id="desc">
       <div class="logo-smart">SMART</div>
       <div class="logo-recipe">RECIPE</div>
-      <div class="logo-description">
+      <div class="logo-description" v-if="!cpIsVertcial">
         Приложение “Smart Recipe” применяет в себе самые новые технологиии
         свежие идеи для того, чтобы сделать процесс приготовления удобными
         экономичным для вас.
       </div>
+      <div class="logo-description" v-else>Новый взгляд на рецепты</div>
       <div class="logo-buttons-container">
         <div class="logo-button" @click="goTo('team')">Команда</div>
         <div class="logo-button" @click="goTo('roadmap')">Роадмап</div>
@@ -38,7 +43,7 @@
       </div>
     </div>
 
-    <div class="team-container" id="team">
+    <div class="team-container" id="team" v-if="!cpIsVertcial">
       <div class="team-header">Команда</div>
       <div class="row">
         <CardComponent
@@ -129,6 +134,102 @@
       </div>
     </div>
 
+    <!-- MOBILE LAYOUT XD -->
+    <div class="team-container" id="team" v-else>
+      <div class="team-header">Команда</div>
+      <div class="row">
+        <CardComponent
+          photo="/images/artem.png"
+          name="Мотякин Артем"
+          position="Руководитель"
+          description="Студент НИУ ВШЭ КБ 3 курс"
+          work="Работа: Huawei AI Laboratory, отдел AI Optimization and Acceleration."
+          stack="C/C++, Python, SQL"
+          info="Увлечения: Project Management, участие в хакатонах в роли backend & ml разработчика"
+        />
+      </div>
+      <div class="row">
+        <CardComponent
+          photo="/images/maxim.png"
+          name="Копырин Максим"
+          position="Teamlead front-end /designer"
+          description="Студент НИУ ВШЭ КБ 3 курс"
+          work="Работа: Ростелеком ЦОД отдел “Мониторинг защищенности”"
+          stack="Python, SQL, TS, React"
+          info="Увлечения: CTF, OSINT-разведка, front-end, design"
+        />
+        <CardComponent
+          photo="/images/mathew.png"
+          name="Семенищев Матвей"
+          position="Teamlead back-end"
+          description="Студент НИУ ВШЭ ИБ 3 курс"
+          work="-"
+          stack="Postgres, Django, Selenium, REST API"
+          info="Увлечения: Разработка сайтов, парсинг данных, шахматы"
+        />
+      </div>
+      <div class="row">
+        <CardComponent
+          photo="/images/daniel.png"
+          name="Емельяненко Даниил"
+          position="Devops/Системный архитектор"
+          description="Студент НИУ ВШЭ КБ 3 курс"
+          work="Работа: FullStack разработчик в компании АО «Нейросети»"
+          stack="JS (VueJS, NestJS, AdonisJS), Python (Django)"
+          info="Увлечения: рисование, игра на гитаре, хакатоны"
+        />
+        <CardComponent
+          photo="/images/egor.png"
+          name="Зотьев Егор"
+          position="Продуктовый аналитик"
+          work="Работа: -"
+          description="Имеет свою студию по интеграции новых технологий и модернизации бизнес-процессов"
+          stack="С/C++, Python"
+          info="Увлечения: Продукт-аналитика, бизнес планирование"
+        />
+      </div>
+      <div class="row">
+        <CardComponent
+          photo="/images/hz.png"
+          name="Федоров Михаил"
+          position="Front-end/designer"
+          description="НИУ ВШЭ ИБ 3 курсУчусь, постепенно развиваюсьв своей сфере"
+          work="Люблю писать интересные небольшие программки, не только как домашки"
+          stack="Python, JS"
+          info="Увлечения: мода/дизайн, программирование"
+        />
+        <CardComponent
+          photo="/images/sergey.png"
+          name="Гетун Сергей"
+          position="Back-end разработчик"
+          description="Студент НИУ ВШЭ КБ 3 курс"
+          work="-"
+          stack="Python, Django"
+          info="Увлечения: написание back-end части для различных проектов, питон разработчик"
+        />
+      </div>
+      <div class="row">
+        <CardComponent
+          photo="/images/sendik.png"
+          name="Сендик Михаил"
+          position="ML/СV разработчик"
+          description="Студент МИСИС БИСТ-21-1 3 курс"
+          work="Работа: smart contract developer"
+          stack="ML engineer, CV, NLP"
+          info="Увлечения: написание CV проектов в сфере игр и траффика"
+        />
+        <CardComponent
+          photo="/images/alexey.png"
+          name="Комиссаренко Алексей"
+          position="ML/СV разработчик"
+          description="Студент МИСИС БИСТ-21-1 3 курс"
+          work="Работа: ДИТ"
+          stack="Python, PyTorch, Classic ML, DL, CV, NLP"
+          info="Увлечения: -"
+        />
+      </div>
+    </div>
+
     <div class="special-thanks-container" id="thanks">
       <div class="thanks">Отдельная благодарность</div>
       <div class="row">
@@ -193,7 +294,7 @@
         </div>
         <div class="roadmap-img">
           <img
-            src="/images/roadmap.png"
+            :src="cpRoadMap"
             alt="roadmap"
             style="max-width: 100%; height: auto"
           />
@@ -218,6 +319,36 @@
             />
           </div>
         </div>
+        <div class="contacts-form" v-if="!cpIsVertcial">
+          <div class="contacts-form-wrapper">
+            <form>
+              <label for="fname">Имя</label>
+              <input
+                v-model="inputName"
+                type="text"
+                id="fname"
+                name="firstname"
+                placeholder="Ваше имя"
+              />
+
+              <label for="lname">Почта</label>
+              <input
+                v-model="email"
+                type="text"
+                id="lname"
+                name="lastname"
+                placeholder="Ваша электронная почта"
+              />
+
+              <input type="submit" value="Submit" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contacts-container" v-if="cpIsVertcial">
+      <div class="contacts-wrapper">
         <div class="contacts-form">
           <div class="contacts-form-wrapper">
             <form>
@@ -230,13 +361,13 @@
                 placeholder="Ваше имя"
               />
 
-              <label for="lname">Номер телефона</label>
+              <label for="lname">Почта</label>
               <input
-                v-model="phone"
+                v-model="email"
                 type="text"
                 id="lname"
                 name="lastname"
-                placeholder="Ваш номер телефона"
+                placeholder="Ваша электронная почта"
               />
 
               <input type="submit" value="Submit" />
@@ -251,11 +382,24 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, onMounted, ref } from "vue";
 import CardComponent from "./components/CardComponent.vue";
 
-const inputName = ref<String>('');
-const phone = ref<String>('');
+const inputName = ref<String>("");
+const email = ref<String>("");
+const screenWidth = ref<number>(window.innerWidth);
+
+const cpIsVertcial = computed(() => screenWidth.value <= 800);
+
+const cpRoadMap = computed(() =>
+  cpIsVertcial.value ? "/images/roadmap-mobile.png" : "/images/roadmap.png"
+);
+
+onMounted(() => {
+  window.addEventListener("resize", () => {
+    screenWidth.value = window.innerWidth;
+  });
+});
 
 function goTo(id: string) {
   location.hash = "#" + id;
@@ -671,5 +815,73 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: white;
   color: black;
+}
+
+@media (width <= 800px) {
+  .logo-smart {
+    font-size: 90px;
+    height: 100px;
+    margin-top: 100px;
+  }
+
+  .logo-recipe {
+    font-size: 90px;
+    height: 100px;
+    margin-bottom: 10px;
+  }
+
+  .team-container .team-header {
+    font-size: 40px;
+  }
+
+  .promo-container .promo-header {
+    font-size: 40px;
+  }
+
+  .roadmap-container .roadmap-header {
+    font-size: 40px;
+  }
+
+  .advantages-container .advantages-header {
+    font-size: 40px;
+  }
+
+  .advantages-container .advantages-desc {
+    font-size: 19px;
+  }
+
+  .advantages-container .advantages-wrapper {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .roadmap-container .roadmap-wrapper {
+    width: 400px;
+  }
+
+  .contacts-container {
+    height: 350px;
+    margin-top: 0px;
+  }
+
+  .contacts-container .contacts-wrapper {
+    height: 350px;
+  }
+
+  .contacts-text {
+    height: 250px;
+
+    text-align: center;
+  }
+
+  .contacts-text .contacts-header {
+    width: 100%;
+    font-size: 40px;
+  }
+
+  .contacts-text .contacts-socials {
+    justify-content: center;
+    gap: 10px;
+  }
 }
 </style>
