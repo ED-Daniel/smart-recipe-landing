@@ -850,6 +850,10 @@ input[type="submit"]:hover {
     font-size: 40px;
   }
 
+  .roadmap-container .roadmap-guide {
+    margin-bottom: 30px;
+  }
+
   .advantages-container .advantages-header {
     font-size: 40px;
   }
@@ -887,9 +891,14 @@ input[type="submit"]:hover {
     font-size: 40px;
   }
 
+  .contacts-text .contacts-email {
+    font-size: 17px;
+  }
+
   .contacts-text .contacts-socials {
     justify-content: center;
-    gap: 10px;
+    font-size: 17px;
+    gap: 12px;
   }
 
   .special-thanks-container .thanks {
