@@ -310,15 +310,19 @@
           <div class="contacts-header">У вас остались вопросы?</div>
           <div class="contacts-email">Почта: smartreceipts@yandex.ru</div>
           <div class="contacts-socials">
-            Наши соцсети:
-            <img src="/images/tg.png" width="50" height="50" class="tg" />
-            <img src="/images/vk.png" width="50" height="50" class="vk" />
-            <img
-              src="/images/inst.png"
-              width="50"
-              height="50"
-              class="instagram"
-            />
+            <div class="icon-wrapper">Наши соцсети:</div>
+            <div class="icon-wrapper">
+              <img src="/images/tg.png" width="46" height="46" class="tg" />
+            </div>
+            <img src="/images/vk.png" width="59" height="59" class="vk" />
+            <div class="icon-wrapper">
+              <img
+                src="/images/inst.png"
+                width="37"
+                height="37"
+                class="instagram"
+              />
+            </div>
           </div>
         </div>
         <div class="contacts-form" v-if="!cpIsVertcial">
@@ -342,7 +346,7 @@
                 placeholder="Ваша электронная почта"
               />
 
-              <input type="submit" value="Submit" />
+              <input type="submit" value="Отправить" />
             </form>
           </div>
         </div>
@@ -372,14 +376,14 @@
                 placeholder="Ваша электронная почта"
               />
 
-              <input type="submit" value="Submit" />
+              <input type="submit" value="Отправить" />
             </form>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="delimeter" />
+    <!-- <div class="delimeter" /> -->
   </div>
 </template>
 
@@ -707,6 +711,12 @@ ul li {
 
   display: flex;
   justify-content: center;
+
+  background-image: url("images/family-gradiented.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
 }
 
 .contacts-container .contacts-wrapper {
@@ -753,7 +763,7 @@ ul li {
 
 .contacts-text .contacts-socials {
   width: 100%;
-  height: 50px;
+  height: 59px;
 
   overflow-wrap: normal;
   color: #fff;
@@ -765,6 +775,14 @@ ul li {
 
   display: flex;
   justify-content: space-between;
+  vertical-align: center;
+}
+
+.icon-wrapper {
+  height: 59px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .contacts-form {
