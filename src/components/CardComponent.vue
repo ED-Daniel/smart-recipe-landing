@@ -8,22 +8,22 @@
           <div class="div">{{ props.position }}</div>
         </div>
         <div class="flexcontainer">
-          <p class="text">
+          <p class="text" v-if="props.description">
             <span class="span">
               {{ props.description }}
             </span>
           </p>
-          <p class="text">
+          <p class="text" v-if="props.work">
             <span class="span">
               {{ props.work }}
             </span>
           </p>
-          <p class="text">
+          <p class="text" v-if="props.stack">
             <span class="span">
               Стек: {{ props.stack }}
             </span>
           </p>
-          <p class="text">
+          <p class="text" v-if="props.info">
             <span class="span">
               {{ props.info }}
             </span>
@@ -53,12 +53,12 @@ p {
     margin-block-end: 0.5em;
 }
 .box {
-  height: 450px;
+  height: 460px;
   width: 250px;
 }
 
 .box .overlap-group-wrapper {
-  height: 450px;
+  height: 460px;
   width: 256px;
 }
 
@@ -66,7 +66,7 @@ p {
   background-color: #383838;
   border-radius: 5px;
   box-shadow: 0px 4px 8.6px #00000033;
-  height: 450px;
+  height: 460px;
   position: relative;
   width: 250px;
 }

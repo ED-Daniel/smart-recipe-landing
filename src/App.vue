@@ -71,7 +71,6 @@
           name="Семенищев Матвей"
           position="Teamlead back-end"
           description="Студент НИУ ВШЭ ИБ 3 курс"
-          work="-"
           stack="Postgres, Django, Selenium, REST API"
           info="Увлечения: Разработка сайтов, парсинг данных, шахматы"
         />
@@ -88,7 +87,6 @@
           photo="/images/egor.png"
           name="Зотьев Егор"
           position="Продуктовый аналитик"
-          work="Работа: -"
           description="Имеет свою студию по интеграции новых технологий и модернизации бизнес-процессов"
           stack="С/C++, Python"
           info="Увлечения: Продукт-аналитика, бизнес планирование"
@@ -109,7 +107,6 @@
           name="Гетун Сергей"
           position="Back-end разработчик"
           description="Студент НИУ ВШЭ КБ 3 курс"
-          work="-"
           stack="Python, Django"
           info="Увлечения: написание back-end части для различных проектов, питон разработчик"
         />
@@ -129,7 +126,6 @@
           description="Студент МИСИС БИСТ-21-1 3 курс"
           work="Работа: ДИТ"
           stack="Python, PyTorch, Classic ML, DL, CV, NLP"
-          info="Увлечения: -"
         />
       </div>
     </div>
@@ -165,7 +161,6 @@
           name="Семенищев Матвей"
           position="Teamlead back-end"
           description="Студент НИУ ВШЭ ИБ 3 курс"
-          work="-"
           stack="Postgres, Django, Selenium, REST API"
           info="Увлечения: Разработка сайтов, парсинг данных, шахматы"
         />
@@ -209,7 +204,6 @@
           name="Гетун Сергей"
           position="Back-end разработчик"
           description="Студент НИУ ВШЭ КБ 3 курс"
-          work="-"
           stack="Python, Django"
           info="Увлечения: написание back-end части для различных проектов, питон разработчик"
         />
