@@ -308,13 +308,15 @@
       <div class="contacts-wrapper">
         <div class="contacts-text">
           <div class="contacts-header">У вас остались вопросы?</div>
-          <div class="contacts-email">Почта: smartreceipts@yandex.ru</div>
+          <div class="contacts-email">Почта: smart-recipe@yandex.ru</div>
           <div class="contacts-socials">
             <div class="icon-wrapper">Наши соцсети:</div>
             <div class="icon-wrapper">
               <img src="/images/tg.png" width="46" height="46" class="tg" />
             </div>
-            <img src="/images/vk.png" width="59" height="59" class="vk" />
+            <div class="icon-wrapper">
+              <img src="/images/vk.png" width="59" height="59" class="vk" />
+            </div>
             <div class="icon-wrapper">
               <img
                 src="/images/inst.png"
@@ -346,6 +348,17 @@
                 placeholder="Ваша электронная почта"
               />
 
+              <label for="letter-text">Текст</label>
+              <textarea
+                v-model="letterText"
+                id="letter-text"
+                name="letter-text"
+                minlength="10"
+                maxlength="250"
+                placeholder="Текст обращения"
+                required
+              ></textarea>
+
               <input type="submit" value="Отправить" />
             </form>
           </div>
@@ -365,6 +378,7 @@
                 id="fname"
                 name="firstname"
                 placeholder="Ваше имя"
+                required
               />
 
               <label for="lname">Почта</label>
@@ -374,7 +388,19 @@
                 id="lname"
                 name="lastname"
                 placeholder="Ваша электронная почта"
+                required
               />
+
+              <label for="letter-text">Текст</label>
+              <textarea
+                v-model="letterText"
+                id="letter-text"
+                name="letter-text"
+                minlength="10"
+                maxlength="250"
+                placeholder="Текст обращения"
+                required
+              ></textarea>
 
               <input type="submit" value="Отправить" />
             </form>
@@ -393,6 +419,7 @@ import CardComponent from "./components/CardComponent.vue";
 
 const inputName = ref<String>("");
 const email = ref<String>("");
+const letterText = ref("");
 const screenWidth = ref<number>(window.innerWidth);
 
 const cpIsVertcial = computed(() => screenWidth.value <= 800);
@@ -783,6 +810,8 @@ ul li {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  cursor: pointer;
 }
 
 .contacts-form {
@@ -814,6 +843,24 @@ input[type="text"] {
   background-color: black;
 
   font-family: Montserrat;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  margin-bottom: 30px;
+  display: inline-block;
+  border: 3px solid #fff;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: white;
+  background-color: black;
+
+  font-family: Montserrat;
+
+  resize: none; /* Запретить изменение размеров */
+  overflow: auto; /* Добавить прокрутку */
 }
 
 input[type="submit"] {
@@ -886,6 +933,8 @@ input[type="submit"]:hover {
   .contacts-container {
     height: 350px;
     margin-top: 0px;
+
+    background-image: none;
   }
 
   .contacts-container .contacts-wrapper {
