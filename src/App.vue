@@ -329,7 +329,7 @@
         </div>
         <div class="contacts-form" v-if="!cpIsVertcial">
           <div class="contacts-form-wrapper">
-            <form>
+            <form @submit.prevent="sendEmail">
               <label for="fname">Имя</label>
               <input
                 v-model="inputName"
@@ -370,7 +370,7 @@
       <div class="contacts-wrapper">
         <div class="contacts-form">
           <div class="contacts-form-wrapper">
-            <form>
+            <form @submit.prevent="sendEmail">
               <label for="fname">Имя</label>
               <input
                 v-model="inputName"
@@ -414,19 +414,30 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, ref } from "vue";
+import { computed, onBeforeMount, onMounted, ref } from "vue";
 import CardComponent from "./components/CardComponent.vue";
+import axios, { AxiosInstance } from "axios";
 
 const inputName = ref<String>("");
 const email = ref<String>("");
 const letterText = ref("");
 const screenWidth = ref<number>(window.innerWidth);
 
+const api = ref<AxiosInstance | null>(null);
+
 const cpIsVertcial = computed(() => screenWidth.value <= 800);
 
 const cpRoadMap = computed(() =>
   cpIsVertcial.value ? "/images/roadmap-mobile.png" : "/images/roadmap.png"
 );
+
+onBeforeMount(() => {
+  api.value = axios.create({
+    baseURL: `https://smart-recipe.ru/api/v1`,
+    responseType: "json",
+    params: {},
+  });
+});
 
 onMounted(() => {
   window.addEventListener("resize", () => {
@@ -436,6 +447,19 @@ onMounted(() => {
 
 function goTo(id: string) {
   location.hash = "#" + id;
+}
+
+function sendEmail() {
+  if (!api.value) {
+    console.error('API not initialized');
+    return;
+  }
+
+  api.value.post('mail/save-form', {
+    email: email.value,
+    name: inputName.value,
+    text: letterText.value,
+  });
 }
 </script>
 

@@ -25,3 +25,5 @@ dist-ssr
 
 nginx/ssl/*.pem
 nginx/media/*
+
+.env
