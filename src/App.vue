@@ -311,7 +311,7 @@
           <div class="contacts-email">Почта: smart-recipe@yandex.ru</div>
           <div class="contacts-socials">
             <div class="icon-wrapper">Наши соцсети:</div>
-            <div class="icon-wrapper">
+            <div class="icon-wrapper" @click="goToTelegram()">
               <img src="/images/tg.png" width="46" height="46" class="tg" />
             </div>
             <div class="icon-wrapper">
@@ -447,6 +447,10 @@ onMounted(() => {
 
 function goTo(id: string) {
   location.hash = "#" + id;
+}
+
+function goToTelegram() {
+  location.assign('https://t.me/m_artem_ka')
 }
 
 function sendEmail() {
