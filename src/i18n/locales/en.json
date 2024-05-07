@@ -1,0 +1,38 @@
+{
+    "nav.description": "Description",
+    "nav.team": "Team",
+    "nav.roadmap": "Roadmap",
+    "nav.advantages": "Advantages",
+    "nav.contacts": "Contacts",
+    "nav.locale": "🇬🇧",
+
+    "logo.description": "The 'Smart Recipe' application uses the latest technologies and fresh ideas to make the cooking process convenient and economical for you.",
+    "logo.description.sub": "New way for recipes",
+    
+    "header.promo": "Promo-video",
+    "header.team": "Team",
+    "header.speacial-thanks": "Special Thanks",
+    "header.advantages": "Advantages",
+    "header.roadmap": "Roadmap",
+    "header.contacts": "Any questions?",
+    
+    "advantages.description.one": "Machine learning algorithms recognize different products in photographs and select recipes based on the availability of ingredients and your taste preferences.",
+    "advantages.description.second": "There is no need to leave home: missing products can be ordered in one click from partner stores.",
+    "advantages.description.third": "The unique interactive recipe system offers various ways to speed up the cooking process.",
+    "advantages.description.fourth": "You can add your own recipes and share it with others or rate existing ones.",
+    "advantages.description.fifth": "A detailed filtering and sorting system will make it easy to find the recipe you need.",
+    "advantages.description.sixth": "You can also customize the selection of recipes for yourself thanks to the blacklist of ingredients, and save the recipe in your favorites.",
+    "advantages.description.seventh": "You will immediately be able to easily use all the functionality of our application thanks to a clear interface with detailed guides on each page",
+
+    "roadmap.guide": "- We are here",
+
+    "contacts.email": "Email: ",
+    "contacts.media": "Media:",
+    "contacts.form.name": "Name",
+    "contacts.form.email": "Email",
+    "contacts.form.text": "Text",
+    "contacts.form.name.placeholder": "Your name",
+    "contacts.form.email.placeholder": "Your email",
+    "contacts.form.text.placeholder": "Your question",
+    "contacts.form.submit-text": "Send"
+}

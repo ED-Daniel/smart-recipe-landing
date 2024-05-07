@@ -3,13 +3,16 @@
     <div class="header-container">
       <div class="header">
         <div class="nav-button" @click="goTo('desc')" v-if="!cpIsVertcial">
-          Описание
+          {{ t('nav.description') }}
         </div>
-        <div class="nav-button" @click="goTo('team')">Команда</div>
-        <div class="nav-button" @click="goTo('advantages')">Преимущества</div>
-        <div class="nav-button" @click="goTo('roadmap')">Роадмап</div>
+        <div class="nav-button" @click="goTo('team')">{{ t('nav.team') }}</div>
+        <div class="nav-button" @click="goTo('advantages')">{{ t('nav.advantages') }}</div>
+        <div class="nav-button" @click="goTo('roadmap')">{{ t('nav.roadmap') }}</div>
         <div class="nav-button" @click="goTo('team')" v-if="!cpIsVertcial">
-          Контакты
+          {{ t('nav.contacts') }}
+        </div>
+        <div style="font-size: 30px;" class="nav-button" @click="changeLocale">
+          {{ t('nav.locale') }}
         </div>
       </div>
     </div>
@@ -17,20 +20,18 @@
       <div class="logo-smart">SMART</div>
       <div class="logo-recipe">RECIPE</div>
       <div class="logo-description" v-if="!cpIsVertcial">
-        Приложение “Smart Recipe” применяет в себе самые новые технологиии
-        свежие идеи для того, чтобы сделать процесс приготовления удобными
-        экономичным для вас.
+        {{ t('logo.description') }}
       </div>
-      <div class="logo-description" v-else>Новый взгляд на рецепты</div>
+      <div class="logo-description" v-else>{{ t('logo.description.sub') }}</div>
       <div class="logo-buttons-container" v-if="!cpIsVertcial">
-        <div class="logo-button" @click="goTo('team')">Команда</div>
-        <div class="logo-button" @click="goTo('roadmap')">Роадмап</div>
+        <div class="logo-button" @click="goTo('team')">{{ t('nav.team') }}</div>
+        <div class="logo-button" @click="goTo('roadmap')">{{ t('nav.roadmap') }}</div>
       </div>
     </div>
 
     <div class="promo-container" id="promo">
       <div class="promo-wrapper">
-        <div class="promo-header">Промо-ролик</div>
+        <div class="promo-header">{{ t('header.promo') }}</div>
         <div class="promo-video">
           <video
             src="https://smart-recipe.ru/media/done.mp4"
@@ -44,7 +45,7 @@
     </div>
 
     <div class="team-container" id="team" v-if="!cpIsVertcial">
-      <div class="team-header">Команда</div>
+      <div class="team-header">{{ t('header.team') }}</div>
       <div class="row">
         <CardComponent
           photo="/images/artem.png"
@@ -132,7 +133,7 @@
 
     <!-- MOBILE LAYOUT XD -->
     <div class="team-container" id="team" v-else>
-      <div class="team-header">Команда</div>
+      <div class="team-header">{{ t('header.team') }}</div>
       <div class="row">
         <CardComponent
           photo="/images/artem.png"
@@ -233,7 +234,7 @@
     </div>
 
     <div class="special-thanks-container" id="thanks">
-      <div class="thanks">Отдельная благодарность</div>
+      <div class="thanks">{{ t('header.speacial-thanks') }}</div>
       <div class="row">
         <CardComponent
           photo="/images/bober.png"
@@ -249,38 +250,29 @@
 
     <div class="advantages-container" id="advantages">
       <div class="advantages-wrapper">
-        <div class="advantages-header">Преимущества</div>
+        <div class="advantages-header">{{ t('header.advantages') }}</div>
         <div class="advantages-desc">
           <ul>
             <li>
-              Алгоритмы машинного обучения распознают на фотографии различные
-              продукты и подбирают рецепты, учитывая наличие ингредиентов и ваши
-              вкусовые предпочтения.
+              {{ t('advantages.description.one') }}
             </li>
             <li>
-              Не нужно выходить из дома: недостающие продукты можно в один клик
-              заказать в магазинах партнёров.
+              {{ t('advantages.description.second') }}
             </li>
             <li>
-              Уникальная система интерактивных рецептов предлагает различные
-              способы ускорения процесса приготовления.
+              {{ t('advantages.description.third') }}
             </li>
             <li>
-              Вы можете добавить собственные рецепты и поделиться им с другими
-              или оценить существующие.
+              {{ t('advantages.description.fourth') }}
             </li>
             <li>
-              Подробная система фильтрации и сортировки позволит с легкостью
-              подобрать вам нужный рецепт.
+              {{ t('advantages.description.fifth') }}
             </li>
             <li>
-              Вы сможете настроить подбор рецептов под себя также благодаря
-              блэклисту ингредиентов, сохранить рецепт в избранном.
+              {{ t('advantages.description.sixth') }}
             </li>
             <li>
-              Вы сразу с лёгкостью сможете использовать весь функционал нашего
-              приложения благодаря понятному интерфейсу с подробными гайдами на
-              каждой странице.
+              {{ t('advantages.description.seventh') }}
             </li>
           </ul>
         </div>
@@ -289,10 +281,10 @@
 
     <div class="roadmap-container" id="roadmap">
       <div class="roadmap-wrapper">
-        <div class="roadmap-header">Роадмап</div>
+        <div class="roadmap-header">{{ t('header.roadmap') }}</div>
         <div class="roadmap-guide">
           <div class="dot" />
-          <div class="guide">- Сейчас мы здесь</div>
+          <div class="guide">{{ t('roadmap.guide') }}</div>
         </div>
         <div class="roadmap-img">
           <img
@@ -307,10 +299,10 @@
     <div class="contacts-container" id="contacts">
       <div class="contacts-wrapper">
         <div class="contacts-text">
-          <div class="contacts-header">У вас остались вопросы?</div>
-          <div class="contacts-email">Почта: smart-recipe@yandex.ru</div>
+          <div class="contacts-header">{{ t('header.contacts') }}</div>
+          <div class="contacts-email">{{ t('contacts.email') + "smart-recipe@yandex.ru" }}</div>
           <div class="contacts-socials">
-            <div class="icon-wrapper">Наши соцсети:</div>
+            <div class="icon-wrapper">{{ t('contacts.media') }}</div>
             <div class="icon-wrapper" @click="goToTelegram()">
               <img src="/images/tg.png" width="46" height="46" class="tg" />
             </div>
@@ -330,36 +322,36 @@
         <div class="contacts-form" v-if="!cpIsVertcial">
           <div class="contacts-form-wrapper">
             <form @submit.prevent="sendEmail">
-              <label for="fname">Имя</label>
+              <label for="fname">{{ t('contacts.form.name') }}</label>
               <input
                 v-model="inputName"
                 type="text"
                 id="fname"
                 name="firstname"
-                placeholder="Ваше имя"
+                :placeholder="t('contacts.form.name.placeholder')"
               />
 
-              <label for="lname">Почта</label>
+              <label for="lname">{{ t('contacts.form.email') }}</label>
               <input
                 v-model="email"
                 type="text"
                 id="lname"
                 name="lastname"
-                placeholder="Ваша электронная почта"
+                :placeholder="t('contacts.form.email.placeholder')"
               />
 
-              <label for="letter-text">Текст</label>
+              <label for="letter-text">{{ t('contacts.form.text') }}</label>
               <textarea
                 v-model="letterText"
                 id="letter-text"
                 name="letter-text"
                 minlength="10"
                 maxlength="250"
-                placeholder="Текст обращения"
+                :placeholder="t('contacts.form.text.placeholder')"
                 required
               ></textarea>
 
-              <input type="submit" value="Отправить" />
+              <input type="submit" :value="t('contacts.form.submit-text')" />
             </form>
           </div>
         </div>
@@ -371,38 +363,38 @@
         <div class="contacts-form">
           <div class="contacts-form-wrapper">
             <form @submit.prevent="sendEmail">
-              <label for="fname">Имя</label>
+              <label for="fname">{{ t('contacts.form.name') }}</label>
               <input
                 v-model="inputName"
                 type="text"
                 id="fname"
                 name="firstname"
-                placeholder="Ваше имя"
+                :placeholder="t('contacts.form.name.placeholder')"
                 required
               />
 
-              <label for="lname">Почта</label>
+              <label for="lname">{{ t('contacts.form.email') }}</label>
               <input
                 v-model="email"
                 type="text"
                 id="lname"
                 name="lastname"
-                placeholder="Ваша электронная почта"
+                :placeholder="t('contacts.form.email.placeholder')"
                 required
               />
 
-              <label for="letter-text">Текст</label>
+              <label for="letter-text">{{ t('contacts.form.text') }}</label>
               <textarea
                 v-model="letterText"
                 id="letter-text"
                 name="letter-text"
                 minlength="10"
                 maxlength="250"
-                placeholder="Текст обращения"
+                :placeholder="t('contacts.form.text.placeholder')"
                 required
               ></textarea>
 
-              <input type="submit" value="Отправить" />
+              <input type="submit" :value="t('contacts.form.submit-text')" />
             </form>
           </div>
         </div>
@@ -417,6 +409,9 @@
 import { computed, onBeforeMount, onMounted, ref } from "vue";
 import CardComponent from "./components/CardComponent.vue";
 import axios, { AxiosInstance } from "axios";
+import { getUserLocale, setI18nLanguage, useI18n } from './i18n'; 
+
+const { t } = useI18n();
 
 const inputName = ref<String>("");
 const email = ref<String>("");
@@ -465,6 +460,12 @@ function sendEmail() {
     text: letterText.value,
   });
 }
+
+function changeLocale() {
+  const locale = getUserLocale();
+  setI18nLanguage(locale === 'ru' ? 'en' : 'ru')
+}
+
 </script>
 
 <style scoped>
