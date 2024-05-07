@@ -7,8 +7,8 @@
         </div>
         <div class="nav-button" @click="goTo('team')">{{ t('nav.team') }}</div>
         <div class="nav-button" @click="goTo('advantages')">{{ t('nav.advantages') }}</div>
-        <div class="nav-button" @click="goTo('roadmap')">{{ t('nav.roadmap') }}</div>
-        <div class="nav-button" @click="goTo('team')" v-if="!cpIsVertcial">
+        <div class="nav-button" @click="goTo('roadmap')" v-if="cpRu">{{ t('nav.roadmap') }}</div>
+        <div class="nav-button" @click="goTo('contacts')" v-if="!cpIsVertcial">
           {{ t('nav.contacts') }}
         </div>
         <div style="font-size: 30px;" class="nav-button" @click="changeLocale">
@@ -25,11 +25,11 @@
       <div class="logo-description" v-else>{{ t('logo.description.sub') }}</div>
       <div class="logo-buttons-container" v-if="!cpIsVertcial">
         <div class="logo-button" @click="goTo('team')">{{ t('nav.team') }}</div>
-        <div class="logo-button" @click="goTo('roadmap')">{{ t('nav.roadmap') }}</div>
+        <div class="logo-button" @click="goTo('roadmap')" v-if="cpRu">{{ t('nav.roadmap') }}</div>
       </div>
     </div>
 
-    <div class="promo-container" id="promo">
+    <div class="promo-container" id="promo" v-if="cpRu">
       <div class="promo-wrapper">
         <div class="promo-header">{{ t('header.promo') }}</div>
         <div class="promo-video">
@@ -279,7 +279,7 @@
       </div>
     </div>
 
-    <div class="roadmap-container" id="roadmap">
+    <div class="roadmap-container" id="roadmap" v-if="cpRu">
       <div class="roadmap-wrapper">
         <div class="roadmap-header">{{ t('header.roadmap') }}</div>
         <div class="roadmap-guide">
@@ -425,6 +425,8 @@ const cpIsVertcial = computed(() => screenWidth.value <= 800);
 const cpRoadMap = computed(() =>
   cpIsVertcial.value ? "/images/roadmap-mobile.png" : "/images/roadmap.png"
 );
+
+const cpRu = computed(() => t('locale') === 'ru')
 
 onBeforeMount(() => {
   api.value = axios.create({

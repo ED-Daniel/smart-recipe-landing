@@ -34,5 +34,7 @@
     "contacts.form.name.placeholder": "Ваше имя",
     "contacts.form.email.placeholder": "Ваша почта",
     "contacts.form.text.placeholder": "Текст обращения",
-    "contacts.form.submit-text": "Отправить"
+    "contacts.form.submit-text": "Отправить",
+
+    "locale": "ru"
 }

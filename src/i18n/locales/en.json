@@ -34,5 +34,7 @@
     "contacts.form.name.placeholder": "Your name",
     "contacts.form.email.placeholder": "Your email",
     "contacts.form.text.placeholder": "Your question",
-    "contacts.form.submit-text": "Send"
+    "contacts.form.submit-text": "Send",
+
+    "locale": "en"
 }
