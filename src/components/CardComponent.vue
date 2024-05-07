@@ -20,7 +20,7 @@
           </p>
           <p class="text" v-if="props.stack">
             <span class="span">
-              Стек: {{ props.stack }}
+              Stack: {{ props.stack }}
             </span>
           </p>
           <p class="text" v-if="props.info">

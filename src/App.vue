@@ -3,16 +3,20 @@
     <div class="header-container">
       <div class="header">
         <div class="nav-button" @click="goTo('desc')" v-if="!cpIsVertcial">
-          {{ t('nav.description') }}
+          {{ t("nav.description") }}
         </div>
-        <div class="nav-button" @click="goTo('team')">{{ t('nav.team') }}</div>
-        <div class="nav-button" @click="goTo('advantages')">{{ t('nav.advantages') }}</div>
-        <div class="nav-button" @click="goTo('roadmap')" v-if="cpRu">{{ t('nav.roadmap') }}</div>
+        <div class="nav-button" @click="goTo('team')">{{ t("nav.team") }}</div>
+        <div class="nav-button" @click="goTo('advantages')">
+          {{ t("nav.advantages") }}
+        </div>
+        <div class="nav-button" @click="goTo('roadmap')" v-if="cpRu">
+          {{ t("nav.roadmap") }}
+        </div>
         <div class="nav-button" @click="goTo('contacts')" v-if="!cpIsVertcial">
-          {{ t('nav.contacts') }}
+          {{ t("nav.contacts") }}
         </div>
-        <div style="font-size: 30px;" class="nav-button" @click="changeLocale">
-          {{ t('nav.locale') }}
+        <div style="font-size: 30px" class="nav-button" @click="changeLocale">
+          {{ t("nav.locale") }}
         </div>
       </div>
     </div>
@@ -20,18 +24,20 @@
       <div class="logo-smart">SMART</div>
       <div class="logo-recipe">RECIPE</div>
       <div class="logo-description" v-if="!cpIsVertcial">
-        {{ t('logo.description') }}
+        {{ t("logo.description") }}
       </div>
-      <div class="logo-description" v-else>{{ t('logo.description.sub') }}</div>
+      <div class="logo-description" v-else>{{ t("logo.description.sub") }}</div>
       <div class="logo-buttons-container" v-if="!cpIsVertcial">
-        <div class="logo-button" @click="goTo('team')">{{ t('nav.team') }}</div>
-        <div class="logo-button" @click="goTo('roadmap')" v-if="cpRu">{{ t('nav.roadmap') }}</div>
+        <div class="logo-button" @click="goTo('team')">{{ t("nav.team") }}</div>
+        <div class="logo-button" @click="goTo('roadmap')" v-if="cpRu">
+          {{ t("nav.roadmap") }}
+        </div>
       </div>
     </div>
 
     <div class="promo-container" id="promo" v-if="cpRu">
       <div class="promo-wrapper">
-        <div class="promo-header">{{ t('header.promo') }}</div>
+        <div class="promo-header">{{ t("header.promo") }}</div>
         <div class="promo-video">
           <video
             src="https://smart-recipe.ru/media/done.mp4"
@@ -45,87 +51,87 @@
     </div>
 
     <div class="team-container" id="team" v-if="!cpIsVertcial">
-      <div class="team-header">{{ t('header.team') }}</div>
+      <div class="team-header">{{ t("header.team") }}</div>
       <div class="row">
         <CardComponent
           photo="/images/artem.png"
-          name="Мотякин Артем"
-          position="Руководитель"
-          description="Студент НИУ ВШЭ КБ 3 курс"
-          work="Работа: Huawei AI Laboratory, отдел AI Optimization and Acceleration."
+          :name="t('Мотякин Артем.name')"
+          :position="t('Мотякин Артем.position')"
+          :description="t('Мотякин Артем.description')"
+          :work="t('Мотякин Артем.work')"
           stack="C/C++, Python, SQL"
-          info="Увлечения: Project Management, участие в хакатонах в роли backend & ml разработчика"
+          :info="t('Мотякин Артем.info')"
         />
       </div>
       <div class="row">
         <CardComponent
           photo="/images/maxim.png"
-          name="Копырин Максим"
-          position="Teamlead front-end /designer"
-          description="Студент НИУ ВШЭ КБ 3 курс"
-          work="Работа: Ростелеком ЦОД отдел “Мониторинг защищенности”"
+          :name="t('Копырин Максим.name')"
+          :position="t('Копырин Максим.position')"
+          :description="t('Копырин Максим.description')"
+          :work="t('Копырин Максим.work')"
           stack="Python, SQL, TS, React"
-          info="Увлечения: CTF, OSINT-разведка, front-end, design"
+          :info="t('Копырин Максим.info')"
         />
         <CardComponent
           photo="/images/mathew.png"
-          name="Семенищев Матвей"
-          position="Teamlead back-end"
-          description="Студент НИУ ВШЭ ИБ 3 курс"
+          :name="t('Семенищев Матвей.name')"
+          :position="t('Семенищев Матвей.position')"
+          :description="t('Семенищев Матвей.description')"
           stack="Postgres, Django, Selenium, REST API"
-          info="Увлечения: Разработка сайтов, парсинг данных, шахматы"
+          :info="t('Семенищев Матвей.info')"
         />
         <CardComponent
           photo="/images/daniel.png"
-          name="Емельяненко Даниил"
-          position="Devops/Системный архитектор"
-          description="Студент НИУ ВШЭ КБ 3 курс"
-          work="Работа: FullStack разработчик в компании АО «Нейросети»"
+          :name="t('Емельяненко Даниил.name')"
+          :position="t('Емельяненко Даниил.position')"
+          :description="t('Емельяненко Даниил.description')"
+          :work="t('Емельяненко Даниил.work')"
           stack="JS (VueJS, NestJS, AdonisJS), Python (Django)"
-          info="Увлечения: рисование, игра на гитаре, хакатоны"
+          :info="t('Емельяненко Даниил.info')"
         />
         <CardComponent
           photo="/images/egor.png"
-          name="Зотьев Егор"
-          position="Продуктовый аналитик"
-          description="Имеет свою студию по интеграции новых технологий и модернизации бизнес-процессов"
+          :name="t('Зотьев Егор.name')"
+          :position="t('Зотьев Егор.position')"
+          :description="t('Зотьев Егор.description')"
           stack="С/C++, Python"
-          info="Увлечения: Продукт-аналитика, бизнес планирование"
+          :info="t('Зотьев Егор.info')"
         />
       </div>
       <div class="row">
         <CardComponent
           photo="/images/hz.png"
-          name="Федоров Михаил"
-          position="Front-end/designer"
-          description="НИУ ВШЭ ИБ 3 курсУчусь, постепенно развиваюсьв своей сфере"
-          work="Люблю писать интересные небольшие программки, не только как домашки"
+          :name="t('Федоров Михаил.name')"
+          :position="t('Федоров Михаил.position')"
+          :description="t('Федоров Михаил.description')"
+          :work="t('Федоров Михаил.work')"
           stack="Python, JS"
-          info="Увлечения: мода/дизайн, программирование"
+          :info="t('Федоров Михаил.info')"
         />
         <CardComponent
           photo="/images/sergey.png"
-          name="Гетун Сергей"
-          position="Back-end разработчик"
-          description="Студент НИУ ВШЭ КБ 3 курс"
+          :name="t('Гетун Сергей.name')"
+          :position="t('Гетун Сергей.position')"
+          :description="t('Гетун Сергей.description')"
           stack="Python, Django"
-          info="Увлечения: написание back-end части для различных проектов, питон разработчик"
+          :info="t('Гетун Сергей.info')"
         />
         <CardComponent
           photo="/images/sendik.png"
-          name="Сендик Михаил"
-          position="ML/СV разработчик"
-          description="Студент МИСИС БИСТ-21-1 3 курс"
-          work="Работа: smart contract developer"
+          :name="t('Сендик Михаил.name')"
+          :position="t('Сендик Михаил.position')"
+          :description="t('Сендик Михаил.description')"
+          :work="t('Сендик Михаил.work')"
           stack="ML engineer, CV, NLP"
-          info="Увлечения: написание CV проектов в сфере игр и траффика"
+          :info="t('Сендик Михаил.info')"
         />
         <CardComponent
           photo="/images/alexey.png"
-          name="Комиссаренко Алексей"
-          position="ML/СV разработчик"
-          description="Студент МИСИС БИСТ-21-1 3 курс"
-          work="Работа: ДИТ"
+          :name="t('Комиссаренко Алексей.name')"
+          :position="t('Комиссаренко Алексей.position')"
+          :description="t('Комиссаренко Алексей.description')"
+          :work="t('Комиссаренко Алексей.work')"
           stack="Python, PyTorch, Classic ML, DL, CV, NLP"
         />
       </div>
@@ -133,146 +139,144 @@
 
     <!-- MOBILE LAYOUT XD -->
     <div class="team-container" id="team" v-else>
-      <div class="team-header">{{ t('header.team') }}</div>
+      <div class="team-header">{{ t("header.team") }}</div>
       <div class="row">
         <CardComponent
           photo="/images/artem.png"
-          name="Мотякин Артем"
-          position="Руководитель"
-          description="Студент НИУ ВШЭ КБ 3 курс"
-          work="Работа: Huawei AI Laboratory, отдел AI Optimization and Acceleration."
+          :name="t('Мотякин Артем.name')"
+          :position="t('Мотякин Артем.position')"
+          :description="t('Мотякин Артем.description')"
+          :work="t('Мотякин Артем.work')"
           stack="C/C++, Python, SQL"
-          info="Увлечения: Project Management, участие в хакатонах в роли backend & ml разработчика"
+          :info="t('Мотякин Артем.info')"
         />
       </div>
       <div class="row">
         <CardComponent
           photo="/images/maxim.png"
-          name="Копырин Максим"
-          position="Teamlead front-end /designer"
-          description="Студент НИУ ВШЭ КБ 3 курс"
-          work="Работа: Ростелеком ЦОД отдел “Мониторинг защищенности”"
+          :name="t('Копырин Максим.name')"
+          :position="t('Копырин Максим.position')"
+          :description="t('Копырин Максим.description')"
+          :work="t('Копырин Максим.work')"
           stack="Python, SQL, TS, React"
-          info="Увлечения: CTF, OSINT-разведка, front-end, design"
+          :info="t('Копырин Максим.info')"
         />
       </div>
       <div class="row">
         <CardComponent
           photo="/images/mathew.png"
-          name="Семенищев Матвей"
-          position="Teamlead back-end"
-          description="Студент НИУ ВШЭ ИБ 3 курс"
+          :name="t('Семенищев Матвей.name')"
+          :position="t('Семенищев Матвей.position')"
+          :description="t('Семенищев Матвей.description')"
           stack="Postgres, Django, Selenium, REST API"
-          info="Увлечения: Разработка сайтов, парсинг данных, шахматы"
+          :info="t('Семенищев Матвей.info')"
         />
       </div>
       <div class="row">
         <CardComponent
           photo="/images/daniel.png"
-          name="Емельяненко Даниил"
-          position="Devops/Системный архитектор"
-          description="Студент НИУ ВШЭ КБ 3 курс"
-          work="Работа: FullStack разработчик в компании АО «Нейросети»"
+          :name="t('Емельяненко Даниил.name')"
+          :position="t('Емельяненко Даниил.position')"
+          :description="t('Емельяненко Даниил.description')"
+          :work="t('Емельяненко Даниил.work')"
           stack="JS (VueJS, NestJS, AdonisJS), Python (Django)"
-          info="Увлечения: рисование, игра на гитаре, хакатоны"
+          :info="t('Емельяненко Даниил.info')"
         />
       </div>
       <div class="row">
         <CardComponent
           photo="/images/egor.png"
-          name="Зотьев Егор"
-          position="Продуктовый аналитик"
-          work="Работа: -"
-          description="Имеет свою студию по интеграции новых технологий и модернизации бизнес-процессов"
+          :name="t('Зотьев Егор.name')"
+          :position="t('Зотьев Егор.position')"
+          :description="t('Зотьев Егор.description')"
           stack="С/C++, Python"
-          info="Увлечения: Продукт-аналитика, бизнес планирование"
+          :info="t('Зотьев Егор.info')"
         />
       </div>
       <div class="row">
         <CardComponent
           photo="/images/hz.png"
-          name="Федоров Михаил"
-          position="Front-end/designer"
-          description="НИУ ВШЭ ИБ 3 курсУчусь, постепенно развиваюсьв своей сфере"
-          work="Люблю писать интересные небольшие программки, не только как домашки"
+          :name="t('Федоров Михаил.name')"
+          :position="t('Федоров Михаил.position')"
+          :description="t('Федоров Михаил.description')"
+          :work="t('Федоров Михаил.work')"
           stack="Python, JS"
-          info="Увлечения: мода/дизайн, программирование"
+          :info="t('Федоров Михаил.info')"
         />
       </div>
       <div class="row">
         <CardComponent
           photo="/images/sergey.png"
-          name="Гетун Сергей"
-          position="Back-end разработчик"
-          description="Студент НИУ ВШЭ КБ 3 курс"
+          :name="t('Гетун Сергей.name')"
+          :position="t('Гетун Сергей.position')"
+          :description="t('Гетун Сергей.description')"
           stack="Python, Django"
-          info="Увлечения: написание back-end части для различных проектов, питон разработчик"
+          :info="t('Гетун Сергей.info')"
         />
       </div>
       <div class="row">
         <CardComponent
           photo="/images/sendik.png"
-          name="Сендик Михаил"
-          position="ML/СV разработчик"
-          description="Студент МИСИС БИСТ-21-1 3 курс"
-          work="Работа: smart contract developer"
+          :name="t('Сендик Михаил.name')"
+          :position="t('Сендик Михаил.position')"
+          :description="t('Сендик Михаил.description')"
+          :work="t('Сендик Михаил.work')"
           stack="ML engineer, CV, NLP"
-          info="Увлечения: написание CV проектов в сфере игр и траффика"
+          :info="t('Сендик Михаил.info')"
         />
       </div>
       <div class="row">
         <CardComponent
           photo="/images/alexey.png"
-          name="Комиссаренко Алексей"
-          position="ML/СV разработчик"
-          description="Студент МИСИС БИСТ-21-1 3 курс"
-          work="Работа: ДИТ"
+          :name="t('Комиссаренко Алексей.name')"
+          :position="t('Комиссаренко Алексей.position')"
+          :description="t('Комиссаренко Алексей.description')"
+          :work="t('Комиссаренко Алексей.work')"
           stack="Python, PyTorch, Classic ML, DL, CV, NLP"
-          info="Увлечения: -"
         />
       </div>
     </div>
 
     <div class="special-thanks-container" id="thanks">
-      <div class="thanks">{{ t('header.speacial-thanks') }}</div>
+      <div class="thanks">{{ t("header.speacial-thanks") }}</div>
       <div class="row">
         <CardComponent
           photo="/images/bober.png"
-          name="Бобер Станислав"
-          description="Старший преподаватель НИУ ВШЭ"
-          work="Работа: Главный разработчик ПО в компании СтатСофт"
-          position="Руководитель направления"
-          stack="научный стек Python, PyQt, FastAPI"
-          info="Увлечения: программирование, математическое моделирование"
+          :name="t('Бобер Станислав.name')"
+          :description="t('Бобер Станислав.description')"
+          :work="t('Бобер Станислав.work')"
+          :position="t('Бобер Станислав.position')"
+          stack="Sci Python, PyQt, FastAPI"
+          :info="t('Бобер Станислав.info')"
         />
       </div>
     </div>
 
     <div class="advantages-container" id="advantages">
       <div class="advantages-wrapper">
-        <div class="advantages-header">{{ t('header.advantages') }}</div>
+        <div class="advantages-header">{{ t("header.advantages") }}</div>
         <div class="advantages-desc">
           <ul>
             <li>
-              {{ t('advantages.description.one') }}
+              {{ t("advantages.description.one") }}
             </li>
             <li>
-              {{ t('advantages.description.second') }}
+              {{ t("advantages.description.second") }}
             </li>
             <li>
-              {{ t('advantages.description.third') }}
+              {{ t("advantages.description.third") }}
             </li>
             <li>
-              {{ t('advantages.description.fourth') }}
+              {{ t("advantages.description.fourth") }}
             </li>
             <li>
-              {{ t('advantages.description.fifth') }}
+              {{ t("advantages.description.fifth") }}
             </li>
             <li>
-              {{ t('advantages.description.sixth') }}
+              {{ t("advantages.description.sixth") }}
             </li>
             <li>
-              {{ t('advantages.description.seventh') }}
+              {{ t("advantages.description.seventh") }}
             </li>
           </ul>
         </div>
@@ -281,10 +285,10 @@
 
     <div class="roadmap-container" id="roadmap" v-if="cpRu">
       <div class="roadmap-wrapper">
-        <div class="roadmap-header">{{ t('header.roadmap') }}</div>
+        <div class="roadmap-header">{{ t("header.roadmap") }}</div>
         <div class="roadmap-guide">
           <div class="dot" />
-          <div class="guide">{{ t('roadmap.guide') }}</div>
+          <div class="guide">{{ t("roadmap.guide") }}</div>
         </div>
         <div class="roadmap-img">
           <img
@@ -299,10 +303,12 @@
     <div class="contacts-container" id="contacts">
       <div class="contacts-wrapper">
         <div class="contacts-text">
-          <div class="contacts-header">{{ t('header.contacts') }}</div>
-          <div class="contacts-email">{{ t('contacts.email') + "smart-recipe@yandex.ru" }}</div>
+          <div class="contacts-header">{{ t("header.contacts") }}</div>
+          <div class="contacts-email">
+            {{ t("contacts.email") + "smart-recipe@yandex.ru" }}
+          </div>
           <div class="contacts-socials">
-            <div class="icon-wrapper">{{ t('contacts.media') }}</div>
+            <div class="icon-wrapper">{{ t("contacts.media") }}</div>
             <div class="icon-wrapper" @click="goToTelegram()">
               <img src="/images/tg.png" width="46" height="46" class="tg" />
             </div>
@@ -322,7 +328,7 @@
         <div class="contacts-form" v-if="!cpIsVertcial">
           <div class="contacts-form-wrapper">
             <form @submit.prevent="sendEmail">
-              <label for="fname">{{ t('contacts.form.name') }}</label>
+              <label for="fname">{{ t("contacts.form.name") }}</label>
               <input
                 v-model="inputName"
                 type="text"
@@ -331,7 +337,7 @@
                 :placeholder="t('contacts.form.name.placeholder')"
               />
 
-              <label for="lname">{{ t('contacts.form.email') }}</label>
+              <label for="lname">{{ t("contacts.form.email") }}</label>
               <input
                 v-model="email"
                 type="text"
@@ -340,7 +346,7 @@
                 :placeholder="t('contacts.form.email.placeholder')"
               />
 
-              <label for="letter-text">{{ t('contacts.form.text') }}</label>
+              <label for="letter-text">{{ t("contacts.form.text") }}</label>
               <textarea
                 v-model="letterText"
                 id="letter-text"
@@ -363,7 +369,7 @@
         <div class="contacts-form">
           <div class="contacts-form-wrapper">
             <form @submit.prevent="sendEmail">
-              <label for="fname">{{ t('contacts.form.name') }}</label>
+              <label for="fname">{{ t("contacts.form.name") }}</label>
               <input
                 v-model="inputName"
                 type="text"
@@ -373,7 +379,7 @@
                 required
               />
 
-              <label for="lname">{{ t('contacts.form.email') }}</label>
+              <label for="lname">{{ t("contacts.form.email") }}</label>
               <input
                 v-model="email"
                 type="text"
@@ -383,7 +389,7 @@
                 required
               />
 
-              <label for="letter-text">{{ t('contacts.form.text') }}</label>
+              <label for="letter-text">{{ t("contacts.form.text") }}</label>
               <textarea
                 v-model="letterText"
                 id="letter-text"
@@ -409,7 +415,7 @@
 import { computed, onBeforeMount, onMounted, ref } from "vue";
 import CardComponent from "./components/CardComponent.vue";
 import axios, { AxiosInstance } from "axios";
-import { getUserLocale, setI18nLanguage, useI18n } from './i18n'; 
+import { getUserLocale, setI18nLanguage, useI18n } from "./i18n";
 
 const { t } = useI18n();
 
@@ -426,7 +432,7 @@ const cpRoadMap = computed(() =>
   cpIsVertcial.value ? "/images/roadmap-mobile.png" : "/images/roadmap.png"
 );
 
-const cpRu = computed(() => t('locale') === 'ru')
+const cpRu = computed(() => t("locale") === "ru");
 
 onBeforeMount(() => {
   api.value = axios.create({
@@ -447,16 +453,16 @@ function goTo(id: string) {
 }
 
 function goToTelegram() {
-  location.assign('https://t.me/m_artem_ka')
+  location.assign("https://t.me/m_artem_ka");
 }
 
 function sendEmail() {
   if (!api.value) {
-    console.error('API not initialized');
+    console.error("API not initialized");
     return;
   }
 
-  api.value.post('mail/save-form', {
+  api.value.post("mail/save-form", {
     email: email.value,
     name: inputName.value,
     text: letterText.value,
@@ -465,9 +471,8 @@ function sendEmail() {
 
 function changeLocale() {
   const locale = getUserLocale();
-  setI18nLanguage(locale === 'ru' ? 'en' : 'ru')
+  setI18nLanguage(locale === "ru" ? "en" : "ru");
 }
-
 </script>
 
 <style scoped>
